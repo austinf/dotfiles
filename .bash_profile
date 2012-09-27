@@ -1,4 +1,5 @@
 # .bash_profile
+set -o vi
 
 # aliases
 alias ll='ls -l'
