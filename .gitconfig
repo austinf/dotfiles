@@ -19,5 +19,5 @@
 [diff "odf"]
     textconv=odt2txt
 
-[push]
-	default = simple
+#[push]
+#	default = simple
