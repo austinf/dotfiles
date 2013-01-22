@@ -15,7 +15,9 @@
     remote = green
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+    pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+    all = "!f() { git $*; git submodule foreach --recursive git $*; }; f"
+    grepa = "!f() { git all grep \"$* || :\"; }; f"
 [diff "odf"]
     textconv=odt2txt
 
