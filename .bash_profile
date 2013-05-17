@@ -31,3 +31,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # android osx path
 export PATH=$PATH:$HOME/dev/adt/sdk/tools:$HOME/dev/adt/sdk/platform-tools:$HOME/dev/android-ndk-r8e
+
+export PATH=$PATH:/usr/local/bin
