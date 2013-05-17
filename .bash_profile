@@ -26,3 +26,4 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 # macports path
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
+export PATH=$HOME/dev/adt-bundle-linux-x86_64-20130219/sdk/platform-tools:$PATH
