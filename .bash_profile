@@ -18,7 +18,10 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[37m\]$\[\033[00m\]: '
+SED_VERSION=`sed --version 2>&1 | head -1 | cut -f4 -d' '`
+if [ "$SED_VERSION" != "4.1.5" ]; then
+    export PS1='\[\033[0;35m\]\u\[\033[0;33m\]@\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[37m\]$\[\033[00m\]: '
+fi
 
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
@@ -26,4 +29,7 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 # macports path
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-export PATH=$HOME/dev/adt-bundle-linux-x86_64-20130219/sdk/platform-tools:$PATH
+# android path
+export PATH=$PATH:$HOME/dev/adt/sdk/tools:$HOME/dev/adt/sdk/platform-tools:$HOME/dev/android-ndk-r8e
+
+export PATH=$PATH:/usr/local/bin
