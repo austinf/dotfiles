@@ -3,7 +3,19 @@
 # aliases
 alias ll='ls -l'
 alias l.='ls -al'
-alias grep='grep --color=tty'
+
+# flush the dns cache
+alias flushdns="sudo killall -HUP mDNSResponder"
+
+alias kp="ps auxwww"
+
+# Make grep more user friendly by highlighting matches
+# and exclude grepping through .svn folders.
+alias grep="grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git"
+
+# git
+alias git-top='cd "$(git rev-parse --show-toplevel)"'
+alias git-root='f() { local dir=$PWD; while : ; do git rev-parse --is-inside-work-tree &> /dev/null || break; cd "$(git rev-parse --show-toplevel)"; local dir=$PWD; cd ..; done; cd "$dir"; }; f'
 
 export CLICOLOR=1
 export EDITOR='vim'
