@@ -35,6 +35,9 @@ if [ "$SED_VERSION" != "4.1.5" ]; then
     export PS1='\[\033[0;35m\]\u\[\033[0;33m\]@\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[37m\]$\[\033[00m\]: '
 fi
 
+# Set iTerm Window\Tab Title
+export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
+
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
