@@ -11,7 +11,9 @@ alias kp="ps auxwww"
 
 # Make grep more user friendly by highlighting matches
 # and exclude grepping through .svn folders.
-alias grep="grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git"
+#
+# Turn off unicode and turn off binary file matches
+alias grep="LANG=C grep -I --color=auto --exclude-dir=\.svn --exclude-dir=\.git"
 
 # git
 alias git-top='cd "$(git rev-parse --show-toplevel)"'
