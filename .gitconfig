@@ -4,7 +4,8 @@
 [diff]
 	color = auto
 [status]
-	color = auto
+    color = auto
+	submodulesummary = 1
 [pager]
 	color = true
 [color]
